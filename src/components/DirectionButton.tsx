@@ -1,14 +1,16 @@
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
-
+import { useImageSliderContext } from "./ImageSliderContext";
 
 export interface IDirectionButtonProps {
-    onClickHandler: React.MouseEventHandler<HTMLButtonElement>;
     direction: string;
 }
 
-export default function DirectionButton ({onClickHandler, direction}: IDirectionButtonProps) {
+export default function DirectionButton ({direction}: IDirectionButtonProps) {
     const pos = direction === 'left' ? { left: 0 } : { right: 0 } 
     const arrowBig = direction === 'left' ? <ArrowBigLeft aria-hidden /> : <ArrowBigRight aria-hidden />
+    const { showNextImage, showPrevImage } = useImageSliderContext();
+    const onClickHandler = direction === 'left' ? showPrevImage : showNextImage; 
+
     return (
     <button
         onClick={onClickHandler}

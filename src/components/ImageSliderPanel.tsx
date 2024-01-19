@@ -1,10 +1,13 @@
+import { useImageSliderContext } from "./ImageSliderContext";
+
 
 export interface IImageSliderPanelProps {
     images: {url: string, alt: string}[];
-    imageIndex: number;
 }
 
-export default function ImageSliderPanel ({images, imageIndex}: IImageSliderPanelProps) {
+export default function ImageSliderPanel ({images}: IImageSliderPanelProps) {
+  const { imageIndex } = useImageSliderContext();
+
   return (
     <div
         style={{

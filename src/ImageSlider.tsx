@@ -1,8 +1,8 @@
-import { useState } from "react"
-import "./image-slider.css"
 import DirectionButton from "./components/DirectionButton"
 import ImageSliderPanel from "./components/ImageSliderPanel"
 import CircleDotButtons from "./components/CircleDotButtons"
+import { ImageSliderProvider } from "./components/ImageSliderContext"
+import "./image-slider.css"
 
 type ImageSliderProps = {
   images: {
@@ -12,21 +12,6 @@ type ImageSliderProps = {
 }
 
 export function ImageSlider({ images }: ImageSliderProps) {
-  const [imageIndex, setImageIndex] = useState(0)
-
-  function showNextImage() {
-    setImageIndex(index => {
-      if (index === images.length - 1) return 0
-      return index + 1
-    })
-  }
-
-  function showPrevImage() {
-    setImageIndex(index => {
-      if (index === 0) return images.length - 1
-      return index - 1
-    })
-  }
 
   return (
     <section
@@ -36,15 +21,17 @@ export function ImageSlider({ images }: ImageSliderProps) {
       <a href="#after-image-slider-controls" className="skip-link">
         Skip Image Slider Controls
       </a>
+      <ImageSliderProvider images={images}>
 
-      <ImageSliderPanel images={images} imageIndex={imageIndex} />
+        <ImageSliderPanel images={images}  />
+        
+        <DirectionButton direction="left"/>
+        
+        <DirectionButton direction="right"/>
       
-      <DirectionButton onClickHandler={showPrevImage} direction="left"/>
-      
-      <DirectionButton onClickHandler={showNextImage} direction="right"/>
-    
-      <CircleDotButtons images={images} setImageIndex={setImageIndex} imageIndex={imageIndex}/>
+        <CircleDotButtons images={images} />
 
+      </ImageSliderProvider>
       <div id="after-image-slider-controls" />
     
     </section>
