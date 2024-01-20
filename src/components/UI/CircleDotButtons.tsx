@@ -1,5 +1,5 @@
 import { Circle, CircleDot } from 'lucide-react';
-import { useImageSliderContext } from './ImageSliderContext';
+import { useImageSliderContext } from '../../contexts/ImageSliderContextProvider';
 
 
 

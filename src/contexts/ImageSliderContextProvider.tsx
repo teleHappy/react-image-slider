@@ -11,15 +11,16 @@ type ImageSliderContextType = {
 
 const ImageSliderContext = createContext<ImageSliderContextType | undefined>(undefined);
 
-type ImageSliderProviderProps = {
+type ImageSliderContextProviderProps = {
   images: {
     url: string;
     alt: string;
   }[];
+  imageIndex: number;
   children: React.ReactNode;
 };
 
-export const ImageSliderProvider: React.FC<ImageSliderProviderProps> = ({ images, children }) => {
+export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProps> = ({ images, children }) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   function showNextImage() {
@@ -46,7 +47,7 @@ export const ImageSliderProvider: React.FC<ImageSliderProviderProps> = ({ images
 export function useImageSliderContext() {
   const context = useContext(ImageSliderContext);
   if (context === undefined) {
-    throw new Error('useImageSliderContext must be used within a ImageSliderProvider');
+    throw new Error('useImageSliderContext must be used within a ImageSliderContextProvider');
   }
   return context;
 }

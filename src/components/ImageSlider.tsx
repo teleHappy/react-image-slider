@@ -1,7 +1,7 @@
-import DirectionButton from "./components/DirectionButton"
-import ImageSliderPanel from "./components/ImageSliderPanel"
-import CircleDotButtons from "./components/CircleDotButtons"
-import { ImageSliderProvider } from "./components/ImageSliderContext"
+import DirectionButton from "./UI/DirectionButton"
+import ImageSliderPanel from "./UI/ImageSliderPanel"
+import CircleDotButtons from "./UI/CircleDotButtons"
+import { ImageSliderContextProvider } from "../contexts/ImageSliderContextProvider"
 import "./image-slider.css"
 
 type ImageSliderProps = {
@@ -21,7 +21,7 @@ export function ImageSlider({ images }: ImageSliderProps) {
       <a href="#after-image-slider-controls" className="skip-link">
         Skip Image Slider Controls
       </a>
-      <ImageSliderProvider images={images}>
+      <ImageSliderContextProvider images={images} imageIndex={0}>
 
         <ImageSliderPanel images={images}  />
         
@@ -31,7 +31,7 @@ export function ImageSlider({ images }: ImageSliderProps) {
       
         <CircleDotButtons images={images} />
 
-      </ImageSliderProvider>
+      </ImageSliderContextProvider>
       <div id="after-image-slider-controls" />
     
     </section>

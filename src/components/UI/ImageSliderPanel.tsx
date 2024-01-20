@@ -1,4 +1,4 @@
-import { useImageSliderContext } from "./ImageSliderContext";
+import { useImageSliderContext } from "../../contexts/ImageSliderContextProvider";
 
 
 export interface IImageSliderPanelProps {

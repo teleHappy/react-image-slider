@@ -1,5 +1,5 @@
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
-import { useImageSliderContext } from "./ImageSliderContext";
+import { useImageSliderContext } from "../../contexts/ImageSliderContextProvider";
 
 export interface IDirectionButtonProps {
     direction: string;

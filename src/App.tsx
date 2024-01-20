@@ -1,4 +1,6 @@
-import { ImageSlider } from "./ImageSlider"
+import { ImageSlider } from "./components/ImageSlider"
+
+// TODO: App loads images from an API
 import car1 from "./imgs/car-1.jpg"
 import car2 from "./imgs/car-2.jpg"
 import car3 from "./imgs/car-3.jpg"
