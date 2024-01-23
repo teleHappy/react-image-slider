@@ -2,8 +2,14 @@
 
 import React, { createContext, useState, useContext } from 'react';
 
+type image = {
+  url: string;
+  alt: string;
+}
+
 type ImageSliderContextType = {
   imageIndex: number;
+  getImages: () => image[];
   showNextImage: () => void;
   showPrevImage: () => void;
   setImageIndex: React.Dispatch<React.SetStateAction<number>>
@@ -12,16 +18,16 @@ type ImageSliderContextType = {
 const ImageSliderContext = createContext<ImageSliderContextType | undefined>(undefined);
 
 type ImageSliderContextProviderProps = {
-  images: {
-    url: string;
-    alt: string;
-  }[];
-  imageIndex: number;
+  images: image[];
   children: React.ReactNode;
 };
 
 export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProps> = ({ images, children }) => {
   const [imageIndex, setImageIndex] = useState(0);
+
+  function getImages(){
+    return images;
+  }
 
   function showNextImage() {
     setImageIndex(index => {
@@ -38,7 +44,7 @@ export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProp
   }
 
   return (
-    <ImageSliderContext.Provider value={{ imageIndex, showNextImage, showPrevImage, setImageIndex }}>
+    <ImageSliderContext.Provider value={{ imageIndex, getImages, showNextImage, showPrevImage, setImageIndex }}>
       {children}
     </ImageSliderContext.Provider>
   );

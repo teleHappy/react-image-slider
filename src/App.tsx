@@ -1,4 +1,5 @@
 import { ImageSlider } from "./components/ImageSlider"
+import { ImageSliderContextProvider } from "./contexts/ImageSliderContextProvider"
 
 // TODO: App loads images from an API
 import car1 from "./imgs/car-1.jpg"
@@ -17,6 +18,7 @@ const IMAGES = [
 
 export default function App() {
   return (
+    <ImageSliderContextProvider images={IMAGES}>
     <div
       style={{
         maxWidth: "1200px",
@@ -25,10 +27,11 @@ export default function App() {
         margin: "0 auto",
       }}
     >
-      <ImageSlider images={IMAGES} />
+      <ImageSlider />
       <a href="/" style={{ fontSize: "4rem" }}>
         Link
       </a>
     </div>
+    </ImageSliderContextProvider>
   )
 }

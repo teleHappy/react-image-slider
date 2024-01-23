@@ -13,7 +13,6 @@ type Story = StoryObj<typeof DirectionButton>;
 
 export const Default: Story = {
     args: {
-        onClickHandler: () => {},
         direction:'left',
     }
 }
