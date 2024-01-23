@@ -1,24 +1,9 @@
 import { ImageSlider } from "./components/ImageSlider"
 import { ImageSliderContextProvider } from "./contexts/ImageSliderContextProvider"
 
-// TODO: App loads images from an API
-import car1 from "./imgs/car-1.jpg"
-import car2 from "./imgs/car-2.jpg"
-import car3 from "./imgs/car-3.jpg"
-import car4 from "./imgs/car-4.jpg"
-import car5 from "./imgs/car-5.jpg"
-
-const IMAGES = [
-  { url: car1, alt: "Car One" },
-  { url: car2, alt: "Car Two" },
-  { url: car3, alt: "Car Three" },
-  { url: car4, alt: "Car Four" },
-  { url: car5, alt: "Car Five" },
-]
-
 export default function App() {
   return (
-    <ImageSliderContextProvider images={IMAGES}>
+
     <div
       style={{
         maxWidth: "1200px",
@@ -27,11 +12,12 @@ export default function App() {
         margin: "0 auto",
       }}
     >
-      <ImageSlider />
+      <ImageSliderContextProvider>
+        <ImageSlider />
+      </ImageSliderContextProvider>
       <a href="/" style={{ fontSize: "4rem" }}>
         Link
       </a>
     </div>
-    </ImageSliderContextProvider>
   )
 }

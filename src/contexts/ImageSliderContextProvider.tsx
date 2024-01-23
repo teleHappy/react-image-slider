@@ -2,6 +2,21 @@
 
 import React, { createContext, useState, useContext } from 'react';
 
+// TODO: App loads images from an API
+import car1 from "../imgs/car-1.jpg"
+import car2 from "../imgs/car-2.jpg"
+import car3 from "../imgs/car-3.jpg"
+import car4 from "../imgs/car-4.jpg"
+import car5 from "../imgs/car-5.jpg"
+
+const IMAGES = [
+  { url: car1, alt: "Car One" },
+  { url: car2, alt: "Car Two" },
+  { url: car3, alt: "Car Three" },
+  { url: car4, alt: "Car Four" },
+  { url: car5, alt: "Car Five" },
+]
+
 type image = {
   url: string;
   alt: string;
@@ -18,27 +33,26 @@ type ImageSliderContextType = {
 const ImageSliderContext = createContext<ImageSliderContextType | undefined>(undefined);
 
 type ImageSliderContextProviderProps = {
-  images: image[];
   children: React.ReactNode;
 };
 
-export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProps> = ({ images, children }) => {
+export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProps> = ({ children }) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   function getImages(){
-    return images;
+    return IMAGES;
   }
 
   function showNextImage() {
     setImageIndex(index => {
-      if (index === images.length - 1) return 0;
+      if (index === IMAGES.length - 1) return 0;
       return index + 1;
     });
   }
 
   function showPrevImage() {
     setImageIndex(index => {
-      if (index === 0) return images.length - 1;
+      if (index === 0) return IMAGES.length - 1;
       return index - 1;
     });
   }
