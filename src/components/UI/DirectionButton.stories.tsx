@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import DirectionButton from './DirectionButton';
 import { ImageSliderContextProvider } from '../../contexts/ImageSliderContextProvider';
+import DirectionButton from './DirectionButton';
 
 import "../../image-slider.css"
 
