@@ -2,6 +2,7 @@ import type {Meta, StoryObj} from '@storybook/react';
 import DirectionButton from './DirectionButton';
 import { ImageSliderContextProvider } from '../../contexts/ImageSliderContextProvider';
 
+import "../../image-slider.css"
 
 const meta: Meta<typeof DirectionButton> = {
     title: "Direction Button",
