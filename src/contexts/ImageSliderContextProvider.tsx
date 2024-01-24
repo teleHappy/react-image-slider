@@ -3,11 +3,11 @@
 import React, { createContext, useState, useContext } from 'react';
 
 // TODO: App loads images from an API
-import car1 from "../imgs/car-1.jpg"
-import car2 from "../imgs/car-2.jpg"
-import car3 from "../imgs/car-3.jpg"
-import car4 from "../imgs/car-4.jpg"
-import car5 from "../imgs/car-5.jpg"
+import car1 from "/car-1.jpg"
+import car2 from "/car-2.jpg"
+import car3 from "/car-3.jpg"
+import car4 from "/car-4.jpg"
+import car5 from "/car-5.jpg"
 
 const IMAGES = [
   { url: car1, alt: "Car One" },

@@ -8,7 +8,7 @@ export default function App() {
       style={{
         maxWidth: "1200px",
         width: "100%",
-        aspectRatio: "10 / 6",
+        aspectRatio: "auto",
         margin: "0 auto",
       }}
     >
