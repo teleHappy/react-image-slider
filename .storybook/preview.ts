@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import ImageSliderDecorator from "../src/decorators/ImageSliderDecorator";
 
 const preview: Preview = {
   parameters: {
@@ -9,7 +10,8 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-  }
+  },
+  decorators: [ ImageSliderDecorator ]
 };
 
 export default preview;

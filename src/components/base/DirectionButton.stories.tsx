@@ -6,8 +6,7 @@ import "../../image-slider.css"
 
 const meta: Meta<typeof DirectionButton> = {
     title: "Direction Button",
-    component: DirectionButton,
-    decorators: [story => <ImageSliderContextProvider>{story()}</ImageSliderContextProvider>]
+    component: DirectionButton
 }
 
 export default meta;

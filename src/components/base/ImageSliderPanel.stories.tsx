@@ -6,9 +6,7 @@ import ImageSliderPanel from './ImageSliderPanel';
 
 const meta: Meta<typeof ImageSliderPanel> = {
     title: "Image Slider Panel",
-    component: ImageSliderPanel,
-    decorators: [story => <ImageSliderContextProvider>{story()}</ImageSliderContextProvider>]
-
+    component: ImageSliderPanel
 }
 
 export default meta;

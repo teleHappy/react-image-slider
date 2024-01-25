@@ -8,8 +8,6 @@ import "../../image-slider.css"
 const meta: Meta<typeof CircleDotButtons> = {
     title: "Circle Dot Buttons",
     component: CircleDotButtons,
-    decorators: [story => <ImageSliderContextProvider>{story()}</ImageSliderContextProvider>]
-
 }
 
 export default meta;

@@ -7,7 +7,6 @@ import "../image-slider.css"
 const meta: Meta<typeof ImageSlider> = {
     title: 'Image Slider Composite',
     component: ImageSlider,
-    decorators: [story => <ImageSliderContextProvider>{story()}</ImageSliderContextProvider>]
 }
 
 export default meta;
