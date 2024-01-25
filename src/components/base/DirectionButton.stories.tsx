@@ -15,6 +15,12 @@ type Story = StoryObj<typeof DirectionButton>;
 
 export const Default: Story = {
     args: {
-        direction:'left',
+        direction: 'left',
+    }
+}
+
+export const Right: Story = {
+    args: {
+        direction: 'right',
     }
 }
