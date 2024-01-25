@@ -25,6 +25,7 @@ type image = {
 type ImageSliderContextType = {
   imageIndex: number;
   getImages: () => image[];
+  getImageIndex: () => number;
   showNextImage: () => void;
   showPrevImage: () => void;
   setImageIndex: React.Dispatch<React.SetStateAction<number>>
@@ -43,6 +44,10 @@ export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProp
     return IMAGES;
   }
 
+  function getImageIndex(){
+    return imageIndex;
+  }
+
   function showNextImage() {
     setImageIndex(index => {
       if (index === IMAGES.length - 1) return 0;
@@ -58,7 +63,7 @@ export const ImageSliderContextProvider: React.FC<ImageSliderContextProviderProp
   }
 
   return (
-    <ImageSliderContext.Provider value={{ imageIndex, getImages, showNextImage, showPrevImage, setImageIndex }}>
+    <ImageSliderContext.Provider value={{ imageIndex, getImages, showNextImage, showPrevImage, setImageIndex, getImageIndex }}>
       {children}
     </ImageSliderContext.Provider>
   );
