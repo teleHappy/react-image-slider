@@ -1,5 +1,5 @@
 import { Circle, CircleDot } from 'lucide-react';
-import { useImageSliderContext } from './../../contexts/ImageSliderContextProvider';
+import { useImageSliderContext } from '../../contexts/ImageSliderContextProvider';
 
 export default function CircleDotButtons () {
   const {imageIndex, setImageIndex, getImages} = useImageSliderContext();

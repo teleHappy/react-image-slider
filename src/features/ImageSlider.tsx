@@ -1,6 +1,6 @@
-import DirectionButton from "./UI/DirectionButton"
-import ImageSliderPanel from "./UI/ImageSliderPanel"
-import CircleDotButtons from "./UI/CircleDotButtons"
+import DirectionButton from "../components/base/DirectionButton"
+import ImageSliderPanel from "../components/base/ImageSliderPanel"
+import CircleDotButtons from "../components/base/CircleDotButtons"
 import "../image-slider.css"
 
 export function ImageSlider() {

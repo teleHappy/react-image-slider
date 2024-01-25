@@ -1,4 +1,4 @@
-import { ImageSlider } from "./components/ImageSlider"
+import { ImageSlider } from "./features/ImageSlider"
 import { ImageSliderContextProvider } from "./contexts/ImageSliderContextProvider"
 
 export default function App() {
